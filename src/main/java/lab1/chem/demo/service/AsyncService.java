@@ -3,11 +3,6 @@ package lab1.chem.demo.service;
 import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-//import java.util.concurrent.Future;
-
-//import org.springframework.scheduling.annotation.Async;
-//import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 
 import lab1.chem.demo.entities.Solution;
