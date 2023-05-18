@@ -1,34 +1,66 @@
 package lab1.chem.demo.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
+
+@Entity
+@Table(name="solution")
 public class Solution {
 	private int solutionMass;
 	private Integer substanceMass;
-	private Integer substancePercent;
+	private Integer substancePercent;   
+	
+	@Id
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	public Solution () {
+		this.solutionMass = 0;
+		this.substanceMass = 0;
+		this.substancePercent = 0;
+		this.id = 0;
+	}
+	
+	public Solution (int solMass, int subMass, int subPercent) {
+		this.solutionMass = solMass;
+		this.substanceMass = subMass;
+		this.substancePercent =  subPercent;
+		this.id = 0;
+	}
 	
 	// Setters
-	public void set_solutionMass(Integer _mass) {
-		this.solutionMass = _mass;
+	public void setSolutionMass(Integer mass) {
+		this.solutionMass = mass;
 	}
-	public void set_substanceMass(Integer _mass) {
-		this.substanceMass = _mass;
+	public void setSubstanceMass(Integer mass) {
+		this.substanceMass = mass;
 	}
-	public void set_substancePercent(Integer _percent) {
-		this.substancePercent = _percent;
+	public void setSubstancePercent(Integer percent) {
+		this.substancePercent = percent;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
 	// Getters
-	public Integer get_solutionMass() {
+	public Integer getSolutionMass() {
 		return this.solutionMass;
 	}
-	public Integer get_substanceMass() {
+	public Integer getSubstanceMass() {
 		return this.substanceMass;
 	}
-	public Integer get_substancePercent() {
+	public Integer getSubstancePercent() {
 		return this.substancePercent;
+	}
+	public Integer getId() {
+		return this.id;
 	}
 	
 	// Tasks Solving Methods
-	public Integer count_substanceMass() {
+	public Integer countSubstanceMass() {
 		substanceMass = (solutionMass * substancePercent)/100;
 		return this.substanceMass;
 	}
